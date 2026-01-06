@@ -79,8 +79,8 @@ export function Header() {
 
         {/* Login / Sign up */}
         <div className="flex items-center gap-2 pl-4">
-          {/* LOGIN → /Dashboard */}
-          <Link href="/dashboard">
+          {/* LOGIN → /inbox */}
+          <Link href="/inbox">
             <Button
               variant="ghost"
               size="sm"
