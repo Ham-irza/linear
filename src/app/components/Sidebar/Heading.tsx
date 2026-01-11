@@ -26,7 +26,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
 
   const handleMouseEnter = (index?: number, e?: React.MouseEvent<HTMLDivElement>) => {
     if (index !== undefined) setHoveredIndex(index);
-    if (e) (e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(255,255,255,0.06)';
+    if (e) (e.currentTarget as HTMLDivElement).style.backgroundColor = '#FFFFFF0F'; // Converted from rgba(255,255,255,0.06)
   };
 
   const handleMouseLeave = (index?: number, e?: React.MouseEvent<HTMLDivElement>) => {
@@ -42,7 +42,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
         <div
           className="flex items-center justify-between px-2 rounded-sm cursor-pointer transition-colors duration-200"
           style={{ height: '28px', maxWidth: '160px', backgroundColor: 'transparent' }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)')}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFFFFF0F')} // Converted from rgba(255,255,255,0.06)
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
         >
           <div
@@ -59,7 +59,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
               fontSize: '14px',
               fontWeight: 600,
               lineHeight: '23px',
-              color: 'lch(90.421 1 272)',
+              color: '#E5E5E5', // Converted from lch(90.421 1 272)
             }}
           >
             {workspaceName}
@@ -72,7 +72,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
           <div
             style={{ width: '28px', height: '28px' }}
             className="flex justify-center items-center rounded-lg cursor-pointer transition-colors duration-200"
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFFFFF0F')} // Converted from rgba(255,255,255,0.06)
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
             <MagnifyingGlassButton className="w-4 h-4" color="#939496" />
@@ -90,10 +90,13 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
       </div>
 
       {/* Bottom Row: Inbox and My Issues */}
-      <div style={{ width: '216px', height: '66px' }} className="flex flex-col justify-between p-[5px]">
+      <div
+        style={{ width: '100%', height: 'auto' }} // Changed from fixed width/height for responsiveness
+        className="flex flex-col justify-between p-[5px] gap-1" // Added gap for spacing
+      >
         {/* Inbox */}
         <div
-          style={{ width: '218px', height: '28px' }}
+          style={{ width: '100%', height: '28px' }} // Changed from fixed width
           className="flex items-center justify-start gap-2 rounded-sm px-2 cursor-pointer transition-colors duration-200"
           onMouseEnter={(e) => handleMouseEnter(0, e)}
           onMouseLeave={(e) => handleMouseLeave(0, e)}
@@ -106,7 +109,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
               fontSize: '13px',
               fontWeight: 450,
               lineHeight: 'normal',
-              color: 'lch(90.421 1 272)',
+              color: '#E5E5E5', // Converted from lch(90.421 1 272)
             }}
           >
             Inbox
@@ -115,7 +118,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
 
         {/* My Issues */}
         <div
-          style={{ width: '218px', height: '28px' }}
+          style={{ width: '100%', height: '28px' }} // Changed from fixed width
           className="flex items-center justify-start gap-2 rounded-sm px-2 cursor-pointer transition-colors duration-200"
           onMouseEnter={(e) => handleMouseEnter(1, e)}
           onMouseLeave={(e) => handleMouseLeave(1, e)}
@@ -128,7 +131,7 @@ export function Heading({ workspaceName = 'Workspace' }: HeadingProps) {
               fontSize: '13px',
               fontWeight: 450,
               lineHeight: 'normal',
-              color: 'lch(90.421 1 272)',
+              color: '#E5E5E5', // Converted from lch(90.421 1 272)
             }}
           >
             My Issues

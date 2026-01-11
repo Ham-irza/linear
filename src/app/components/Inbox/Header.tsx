@@ -9,12 +9,13 @@ export default function InboxItem({ className }: InboxItemProps) {
     <div
       className={className}
       style={{
-        width: '349px',
+        width: '100%', // Adjusted for responsiveness
+        maxWidth: '349px', // Preserves original design intent on larger screens
         height: '39px',
         display: 'flex',
         alignItems: 'center',
         boxSizing: 'border-box',
-        border: '0.5px solid #222429', // very thin border
+        border: '0.5px solid #222429', // already in hex
       }}
     >
       <span
@@ -25,7 +26,7 @@ export default function InboxItem({ className }: InboxItemProps) {
           fontSize: '13px',
           fontWeight: 500,
           lineHeight: 'normal',
-          color: 'lch(100 0 272)',
+          color: '#FFFFFF', // Converted from lch(100 0 272)
         }}
       >
         Inbox

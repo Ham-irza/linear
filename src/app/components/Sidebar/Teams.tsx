@@ -31,7 +31,7 @@ export default function Teams({ children }: TeamsProps) {
 
   const iconColor = '#939496';
   const iconHoverColor = '#ffffff';
-  const textColor = 'lch(90.421 1 272)';
+  const textColor = '#E5E5E5'; // Converted from lch(90.421 1 272)
 
   const workspaceItems = [
     { label: 'Issues', Icon: CopyIcon },
@@ -54,7 +54,7 @@ export default function Teams({ children }: TeamsProps) {
   }, [openTeams]);
 
   const headerStyle = {
-    width: '216px',
+    width: '100%', // Changed from fixed 216px for responsiveness
     height: '28px',
     display: 'flex',
     alignItems: 'center',
@@ -85,7 +85,7 @@ export default function Teams({ children }: TeamsProps) {
     color: textColor,
     borderRadius: '4px',
     cursor: 'pointer',
-    backgroundColor: hoveredWorkspaceItem === index ? 'rgba(255,255,255,0.06)' : 'transparent',
+    backgroundColor: hoveredWorkspaceItem === index ? '#FFFFFF0F' : 'transparent', // Converted from rgba
     opacity: isOpen ? 1 : 0,
     transform: isOpen ? 'translateY(0px)' : 'translateY(-4px)',
     transition: 'opacity 250ms ease, transform 250ms ease, color 200ms, background-color 200ms',
@@ -102,12 +102,12 @@ export default function Teams({ children }: TeamsProps) {
   };
 
   return (
-    <div style={{ width: '216px' }} className="flex flex-col px-2">
+    <div style={{ width: '100%' }} className="flex flex-col px-2">
       {/* Your Teams Header */}
       <div
         style={{
           ...headerStyle,
-          backgroundColor: rowHoveredTeams ? 'rgba(255,255,255,0.06)' : 'transparent',
+          backgroundColor: rowHoveredTeams ? '#FFFFFF0F' : 'transparent', // Converted from rgba
         }}
         onClick={() => {
           setOpenTeams(!openTeams);
@@ -177,14 +177,14 @@ export default function Teams({ children }: TeamsProps) {
            It becomes 'visible' 300ms after opening.
         */}
         <div style={{ overflow: teamsOverflowVisible ? 'visible' : 'hidden' }}>
-          <div style={{ ...teamsChildStyle, width: '216px' }}>
+          <div style={{ ...teamsChildStyle, width: '100%' }}> {/* Changed width for responsiveness */}
             
             {/* Workspace Header */}
             <div
               style={{
                 ...headerStyle,
                 fontSize: '13px',
-                color: 'lch(100 0 272)',
+                color: '#FFFFFF', // Converted from lch(100 0 272)
                 backgroundColor: 'transparent',
                 paddingLeft: '6px'
               }}
@@ -229,7 +229,7 @@ export default function Teams({ children }: TeamsProps) {
                 transition: 'height 300ms ease',
                 display: 'flex',
                 flexDirection: 'column',
-                width: '216px',
+                width: '100%', // Changed from fixed 216px for responsiveness
               }}
             >
               {workspaceItems.map((item, index) => (

@@ -11,7 +11,8 @@ export function Sidebar() {
 
   return (
     <aside
-      className="fixed left-0 top-0 h-screen w-[244px] bg-[#0a0a0a] z-20 px-3.5 pt-2"
+      // Updated width to w-full for mobile (if used in drawer) and w-[244px] for desktop
+      className="fixed left-0 top-0 h-screen w-full md:w-[244px] bg-[#0a0a0a] z-20 px-3.5 pt-2"
       style={{ position: 'relative' }}
     >
       {/* Right border with curve */}
@@ -22,7 +23,7 @@ export function Sidebar() {
           right: 0,
           height: `calc(100% - 8.5px)`,
           width: '1px',
-          backgroundColor: '#222429',
+          backgroundColor: '#222429', // Already in Hex
           borderTopRightRadius: '16px',
         }}
       />

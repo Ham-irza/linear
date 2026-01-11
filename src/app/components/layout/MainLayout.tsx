@@ -21,9 +21,19 @@ export function MainLayout({
 
   return (
     <div className="flex h-screen bg-background text-foreground">
-      <Sidebar currentPath={pathname} />
+      {/* Sidebar wrapper: 
+        Hidden on mobile to prevent blocking content (standard responsive pattern).
+        Visible on desktop (md:block).
+      */}
+      <div className="hidden md:block">
+        <Sidebar currentPath={pathname} />
+      </div>
 
-      <div className="flex-1 flex flex-col ml-sidebar overflow-hidden">
+      {/* Main Content Area:
+        ml-0 on mobile (full width).
+        ml-[244px] on desktop to account for sidebar width.
+      */}
+      <div className="flex-1 flex flex-col ml-0 md:ml-[244px] overflow-hidden">
         {showHeader && <Header title={title} subtitle={subtitle} />}
         <main className="flex-1 overflow-y-auto">{children}</main>
       </div>

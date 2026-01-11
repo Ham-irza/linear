@@ -8,10 +8,13 @@ export function HeroSection() {
     <section
       style={{
         backgroundColor: "#08090a",
-        width: "1024px",
-        height: "392px",
+        width: "100%", // Responsive width
+        maxWidth: "1024px", // Constraint for large screens
+        height: "auto", // Changed from fixed 392px to prevent overflow on mobile
         paddingTop: "104px",
         paddingLeft: "24px",
+        paddingRight: "24px", // Added for symmetry on mobile
+        paddingBottom: "64px", // Added spacing for bottom since height is auto
       }}
       className="mx-auto"
     >
@@ -23,9 +26,9 @@ export function HeroSection() {
           style={{
             fontFamily:
               '"Inter Variable", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-            fontSize: "64px",
+            fontSize: "clamp(36px, 5vw, 64px)", // Responsive scaling
             fontWeight: 510,
-            lineHeight: "67.84px",
+            lineHeight: "1.1", // Relative unit handles scaling better than fixed px
             letterSpacing: "-1.408px",
             color: "#f7f8f8",
           }}
@@ -42,7 +45,7 @@ export function HeroSection() {
             fontSize: "17px",
             fontWeight: 400,
             lineHeight: "27.2px",
-            color: "rgb(138, 143, 152)",
+            color: "#8A8F98", // Converted from rgb(138, 143, 152)
           }}
         >
           Meet the system for modern software development.<br />
@@ -59,7 +62,7 @@ export function HeroSection() {
               borderColor: "#e6e6e6",
               borderStyle: "solid",
               borderWidth: "0.666667px",
-              boxShadow: "0px 8px 2px 0px #0000",
+              boxShadow: "0px 8px 2px 0px #00000000", // Standardized hex
               color: "#08090a",
               fontFamily:
                 '"Inter Variable", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',

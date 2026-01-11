@@ -41,7 +41,8 @@ export function Header() {
       <div
         className="flex items-center justify-between relative z-10"
         style={{
-          width: "1024px",
+          width: "100%", // Changed from fixed 1024px for responsiveness
+          maxWidth: "1024px", // Maintains original max width
           height: "64px",
           paddingLeft: "24px",
           paddingRight: "24px",
@@ -58,7 +59,8 @@ export function Header() {
         </div>
 
         {/* Center Navigation */}
-        <nav className="flex-1 flex justify-center gap-2.5 ml-2">
+        {/* Added hidden md:flex to hide links on mobile to prevent overflow/breaking */}
+        <nav className="flex-1 hidden md:flex justify-center gap-2.5 ml-2">
           {navLinks.map((link) => (
             <Button
               key={link}
@@ -66,7 +68,7 @@ export function Header() {
               size="sm"
               style={ghostStyle}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)";
+                e.currentTarget.style.backgroundColor = "#FFFFFF0F"; // Converted from rgba(255,255,255,0.06)
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
@@ -86,7 +88,7 @@ export function Header() {
               size="sm"
               style={ghostStyle}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.06)";
+                e.currentTarget.style.backgroundColor = "#FFFFFF0F"; // Converted from rgba(255,255,255,0.06)
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "transparent";
@@ -114,20 +116,20 @@ export function Header() {
               alignItems: "center",
               justifyContent: "center",
               gap: "8px",
-              boxShadow: "rgba(0,0,0,0.00) 0px 8px 2px 0px",
+              boxShadow: "#00000000 0px 8px 2px 0px", // Converted from rgba(0,0,0,0.00)
               transition,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#d9d9d9";
               e.currentTarget.style.borderColor = "#d9d9d9";
               e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow = "rgba(0,0,0,0.10) 0px 4px 12px";
+              e.currentTarget.style.boxShadow = "#0000001A 0px 4px 12px"; // Converted from rgba(0,0,0,0.10)
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "#e6e6e6";
               e.currentTarget.style.borderColor = "#e6e6e6";
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "rgba(0,0,0,0.00) 0px 8px 2px 0px";
+              e.currentTarget.style.boxShadow = "#00000000 0px 8px 2px 0px"; // Converted from rgba(0,0,0,0.00)
             }}
           >
             Sign up

@@ -18,7 +18,7 @@ export default function Try({ children }: TryProps) {
 
   const iconColor = '#939496';
   const iconHoverColor = '#ffffff';
-  const textColor = 'lch(90.421 1 272)';
+  const textColor = '#E5E5E5'; // Converted from lch(90.421 1 272)
 
   const items = [
     { label: 'Import Issues', Icon: CopyIcon },
@@ -28,7 +28,7 @@ export default function Try({ children }: TryProps) {
 
   const handleMouseEnter = (index?: number, e?: React.MouseEvent<HTMLDivElement>) => {
     if (index !== undefined) setHoveredIndex(index);
-    if (e) (e.currentTarget as HTMLDivElement).style.backgroundColor = 'rgba(255,255,255,0.06)';
+    if (e) (e.currentTarget as HTMLDivElement).style.backgroundColor = '#FFFFFF0F'; // Converted from rgba(255,255,255,0.06)
   };
 
   const handleMouseLeave = (index?: number, e?: React.MouseEvent<HTMLDivElement>) => {
@@ -37,7 +37,7 @@ export default function Try({ children }: TryProps) {
   };
 
   const headerStyle: React.CSSProperties = {
-    width: '216px',
+    width: '100%', // Changed from fixed 216px for responsiveness
     height: '28px',
     display: 'flex',
     alignItems: 'center',
@@ -77,12 +77,12 @@ export default function Try({ children }: TryProps) {
   });
 
   return (
-    <div style={{ width: '216px' }} className="flex flex-col p-2">
+    <div style={{ width: '100%' }} className="flex flex-col p-2">
       {/* Try Header */}
       <div
         style={headerStyle}
         onClick={() => setOpen(!open)}
-        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)')}
+        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFFFFF0F')} // Converted from rgba(255,255,255,0.06)
         onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
         className="flex justify-start items-center"
       >
@@ -104,7 +104,7 @@ export default function Try({ children }: TryProps) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
-          width: '216px',
+          width: '100%', // Changed from fixed 216px for responsiveness
         }}
       >
         {items.map((item, index) => (
